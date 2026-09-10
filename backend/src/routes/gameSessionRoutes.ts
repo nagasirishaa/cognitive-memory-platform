@@ -1,5 +1,5 @@
 import express from "express";
-import GameSession from "../models/Gamesession";
+import GameSession from "../models/GameSession";
 
 const router = express.Router();
 
