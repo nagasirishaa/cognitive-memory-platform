@@ -1,12 +1,29 @@
+/* ======================================================
+   GLOBAL
+====================================================== */
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f7fa;
-  color: #222;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  background:
+    linear-gradient(
+      135deg,
+      #f4f8f7 0%,
+      #eef5f7 50%,
+      #f8f5f0 100%
+    );
+  color: #24333b;
 }
 
 button {
@@ -14,34 +31,58 @@ button {
   cursor: pointer;
 }
 
-/* LOGIN */
+button:focus-visible,
+input:focus-visible {
+  outline: 4px solid rgba(46, 139, 126, 0.3);
+  outline-offset: 2px;
+}
+
+
+/* ======================================================
+   LOGIN
+====================================================== */
 
 .login-container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eef3f8;
+  padding: 30px;
+  background:
+    radial-gradient(
+      circle at top left,
+      #dff3ed,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #e8e2f7,
+      transparent 40%
+    ),
+    #f4f7f8;
 }
 
 .login-box {
   width: 90%;
   max-width: 500px;
-  padding: 40px;
-  background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  padding: 45px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  box-shadow:
+    0 20px 60px rgba(31, 61, 72, 0.13);
 }
 
 .login-box h1 {
   text-align: center;
   font-size: 36px;
+  color: #205f5a;
 }
 
 .login-subtitle {
   text-align: center;
   font-size: 20px;
   margin-bottom: 30px;
+  color: #66777d;
 }
 
 .login-box label {
@@ -49,14 +90,20 @@ button {
   font-size: 22px;
   margin-top: 20px;
   margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .login-box input {
   width: 100%;
-  padding: 15px;
+  padding: 16px;
   font-size: 20px;
-  border: 2px solid #777;
-  border-radius: 10px;
+  border: 2px solid #d4dddd;
+  border-radius: 12px;
+  background: #fafcfc;
+}
+
+.login-box input:focus {
+  border-color: #3b9a8c;
 }
 
 .login-button {
@@ -66,12 +113,529 @@ button {
   font-size: 24px;
   font-weight: bold;
   border: none;
-  border-radius: 12px;
-  background-color: #1f4e79;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    #246f68,
+    #3d9b8d
+  );
   color: white;
+  box-shadow:
+    0 8px 20px rgba(36, 111, 104, 0.2);
+  transition: 0.2s ease;
 }
 
-/* HOME */
+.login-button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* ======================================================
+   NEW SMRITI PATIENT HOME
+====================================================== */
+
+.patient-home-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 10% 0%,
+      rgba(190, 232, 221, 0.45),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(226, 217, 245, 0.4),
+      transparent 28%
+    ),
+    #f5f8f8;
+}
+
+
+/* HEADER */
+
+.patient-header {
+  width: 100%;
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #e0e9e7;
+  box-shadow: 0 3px 20px rgba(38, 62, 67, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+  background: #e1f3ee;
+}
+
+.brand-area h1 {
+  margin: 0;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #205f5a;
+}
+
+.brand-area p {
+  margin: 3px 0 0;
+  color: #748389;
+  font-size: 14px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-pill {
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: #edf5f4;
+  color: #286e67;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.profile-button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: #e7edf1;
+  font-size: 21px;
+  transition: 0.2s ease;
+}
+
+.profile-button:hover {
+  background: #d7e5e6;
+  transform: scale(1.04);
+}
+
+
+/* MAIN */
+
+.patient-main {
+  width: 90%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 45px 0 55px;
+}
+
+
+/* WELCOME */
+
+.welcome-section {
+  min-height: 190px;
+  padding: 35px 42px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #e1f3ed,
+      #f1f7f5 65%,
+      #f7f2eb
+    );
+  border: 1px solid #d9e9e4;
+  box-shadow:
+    0 12px 35px rgba(43, 76, 76, 0.08);
+}
+
+.welcome-small {
+  margin: 0 0 8px;
+  color: #43847b;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.welcome-section h2 {
+  margin: 0;
+  font-size: 40px;
+  color: #244047;
+  letter-spacing: -0.5px;
+}
+
+.welcome-description {
+  max-width: 680px;
+  margin: 12px 0 0;
+  font-size: 19px;
+  line-height: 1.6;
+  color: #64757b;
+}
+
+.welcome-decoration {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+  background: rgba(255, 255, 255, 0.7);
+  transform: rotate(-8deg);
+}
+
+
+/* DAILY JOURNEY */
+
+.daily-card {
+  margin-top: 25px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border-radius: 25px;
+  background: white;
+  border: 1px solid #e3ebea;
+  box-shadow:
+    0 10px 30px rgba(38, 63, 69, 0.08);
+}
+
+.daily-icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: #e7f5ec;
+  font-size: 31px;
+}
+
+.daily-content {
+  flex: 1;
+}
+
+.section-label {
+  margin: 0 0 5px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  color: #4c8b82;
+}
+
+.daily-content h3 {
+  margin: 0;
+  font-size: 25px;
+  color: #283e44;
+}
+
+.daily-content p {
+  margin: 6px 0 12px;
+  font-size: 16px;
+  color: #718087;
+}
+
+.progress-track {
+  width: 100%;
+  max-width: 500px;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e9efee;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    #3d9b8d,
+    #72bfae
+  );
+}
+
+.progress-text {
+  display: block;
+  margin-top: 7px;
+  color: #8a989c;
+  font-size: 13px;
+}
+
+.daily-button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 13px;
+  background: #286f68;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.daily-button:hover {
+  background: #205c56;
+  transform: translateY(-2px);
+}
+
+
+/* MEMORY OF THE DAY */
+
+.memory-highlight {
+  margin-top: 25px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    #fffaf0,
+    #fff5dc
+  );
+  border: 1px solid #f2dfb3;
+}
+
+.memory-highlight-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #fff0c8;
+  font-size: 25px;
+}
+
+.memory-highlight h3 {
+  margin: 4px 0 5px;
+  font-size: 21px;
+  color: #5b4b2d;
+}
+
+.memory-highlight p:last-child {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #786a50;
+}
+
+
+/* ACTION HEADING */
+
+.action-heading {
+  margin: 42px 0 20px;
+}
+
+.action-heading h2 {
+  margin: 5px 0 0;
+  font-size: 29px;
+  color: #293e44;
+}
+
+
+/* ACTION GRID */
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+/* ACTION CARDS */
+
+.action-card {
+  min-height: 170px;
+  padding: 28px;
+  border: 1px solid #e1e9e8;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  background: white;
+  box-shadow:
+    0 8px 25px rgba(37, 62, 67, 0.07);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.action-card::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  bottom: -55px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 35px rgba(37, 62, 67, 0.12);
+}
+
+.action-icon {
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  font-size: 38px;
+}
+
+.action-text {
+  position: relative;
+  z-index: 1;
+}
+
+.action-text h3 {
+  margin: 0 0 7px;
+  font-size: 23px;
+  color: #293d43;
+}
+
+.action-text p {
+  margin: 0;
+  max-width: 280px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #75838a;
+}
+
+.action-arrow {
+  margin-left: auto;
+  font-size: 27px;
+  color: #6f8589;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Individual action colors */
+
+.games-card .action-icon {
+  background: #e6f2ff;
+}
+
+.games-card::after {
+  background: #dcecff;
+}
+
+.assistant-card .action-icon {
+  background: #eee8fb;
+}
+
+.assistant-card::after {
+  background: #e8defa;
+}
+
+.patient-home-page .family-card .action-icon {
+  background: #ffe9e6;
+}
+
+.patient-home-page .family-card::after {
+  background: #ffded9;
+}
+
+.patient-home-page .reminder-card .action-icon {
+  background: #fff2d8;
+}
+
+.patient-home-page .reminder-card::after {
+  background: #ffe8b9;
+}
+
+
+/* PROGRESS CARD */
+
+.progress-card {
+  width: 100%;
+  margin-top: 20px;
+  padding: 23px 28px;
+  border: 1px solid #e1e9e8;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  background: white;
+  box-shadow:
+    0 8px 25px rgba(37, 62, 67, 0.06);
+  transition: 0.2s ease;
+}
+
+.progress-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 13px 30px rgba(37, 62, 67, 0.1);
+}
+
+.progress-card-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 17px;
+  background: #e7edf8;
+  font-size: 28px;
+}
+
+.progress-card h3 {
+  margin: 3px 0 0;
+  font-size: 21px;
+  color: #30434a;
+}
+
+.progress-card > span {
+  margin-left: auto;
+  color: #397b74;
+  font-weight: bold;
+}
+
+
+/* ENCOURAGEMENT */
+
+.encouragement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 35px;
+  color: #708087;
+  font-size: 16px;
+}
+
+.encouragement p {
+  margin: 0;
+}
+
+
+/* ======================================================
+   OLD HOME STYLES
+   Kept for compatibility with existing components
+====================================================== */
 
 .home-container {
   min-height: 100vh;
@@ -111,7 +675,10 @@ button {
   margin-top: 15px;
 }
 
-/* GENERAL PAGE */
+
+/* ======================================================
+   GENERAL PAGE
+====================================================== */
 
 .page-container {
   max-width: 1000px;
@@ -142,7 +709,10 @@ button {
   align-items: center;
 }
 
-/* MEMORY GAME */
+
+/* ======================================================
+   MEMORY GAME
+====================================================== */
 
 .game-container {
   max-width: 900px;
@@ -180,7 +750,10 @@ button {
   background-color: white;
 }
 
-/* SEQUENCE GAME */
+
+/* ======================================================
+   SEQUENCE GAME
+====================================================== */
 
 .sequence-display {
   display: flex;
@@ -206,7 +779,10 @@ button {
   background-color: white;
 }
 
-/* RESULT */
+
+/* ======================================================
+   RESULT
+====================================================== */
 
 .result-box {
   margin: 30px auto;
@@ -225,7 +801,10 @@ button {
   font-size: 24px;
 }
 
-/* FAMILY */
+
+/* ======================================================
+   FAMILY
+====================================================== */
 
 .family-photo {
   width: 220px;
@@ -265,7 +844,10 @@ button {
   font-size: 22px;
 }
 
-/* REMINDERS */
+
+/* ======================================================
+   REMINDERS
+====================================================== */
 
 .reminder-card {
   background-color: white;
@@ -283,7 +865,10 @@ button {
   font-size: 22px;
 }
 
-/* ASSISTANT */
+
+/* ======================================================
+   ASSISTANT
+====================================================== */
 
 .assistant-container {
   max-width: 800px;
@@ -351,7 +936,10 @@ button {
   border-radius: 10px;
 }
 
-/* HEADER */
+
+/* ======================================================
+   HEADER
+====================================================== */
 
 .header {
   display: flex;
@@ -373,7 +961,10 @@ button {
   font-size: 18px;
 }
 
-/* CHART */
+
+/* ======================================================
+   CHART
+====================================================== */
 
 .chart-container {
   width: 100%;
@@ -383,16 +974,70 @@ button {
   border-radius: 20px;
 }
 
-/* MOBILE */
 
-@media (max-width: 700px) {
+/* ======================================================
+   MOBILE
+====================================================== */
 
-  .home-grid {
+@media (max-width: 800px) {
+
+  .patient-header {
+    padding: 16px 5%;
+  }
+
+  .brand-area h1 {
+    font-size: 21px;
+  }
+
+  .brand-area p {
+    font-size: 12px;
+  }
+
+  .language-pill {
+    display: none;
+  }
+
+  .patient-main {
+    width: 92%;
+    padding-top: 25px;
+  }
+
+  .welcome-section {
+    padding: 28px;
+  }
+
+  .welcome-section h2 {
+    font-size: 31px;
+  }
+
+  .welcome-description {
+    font-size: 17px;
+  }
+
+  .welcome-decoration {
+    width: 90px;
+    height: 90px;
+    font-size: 45px;
+  }
+
+  .daily-card {
+    flex-wrap: wrap;
+  }
+
+  .daily-button {
+    width: 100%;
+  }
+
+  .action-grid {
     grid-template-columns: 1fr;
   }
 
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .action-card {
+    min-height: 145px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
   }
 
   .family-list {
@@ -418,4 +1063,154 @@ button {
   .page-container {
     padding: 25px;
   }
+}
+
+
+@media (max-width: 520px) {
+
+  .patient-header {
+    padding: 14px 4%;
+  }
+
+  .brand-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .brand-area {
+    gap: 9px;
+  }
+
+  .brand-area h1 {
+    font-size: 19px;
+  }
+
+  .welcome-section {
+    padding: 24px;
+  }
+
+  .welcome-section h2 {
+    font-size: 28px;
+  }
+
+  .welcome-decoration {
+    display: none;
+  }
+
+  .daily-card {
+    padding: 22px;
+  }
+
+  .daily-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .action-card {
+    padding: 22px;
+  }
+
+  .action-icon {
+    width: 62px;
+    height: 62px;
+    font-size: 31px;
+  }
+
+  .action-text h3 {
+    font-size: 20px;
+  }
+
+  .action-text p {
+    font-size: 15px;
+  }
+
+  .action-arrow {
+    font-size: 22px;
+  }
+
+  .encouragement {
+    font-size: 14px;
+  }
+}
+/* Profile dropdown */
+
+.profile-container {
+  position: relative;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 54px;
+  right: 0;
+  width: 250px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.14);
+  border: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+
+.profile-menu-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 6px 12px;
+}
+
+.profile-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f5f2;
+  font-size: 22px;
+}
+
+.profile-menu-header h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #263b3a;
+}
+
+.profile-menu-header p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #71817f;
+}
+
+.profile-menu-divider {
+  height: 1px;
+  background: #edf0ef;
+  margin: 4px 0 8px;
+}
+
+.profile-menu-item {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  color: #334443;
+}
+
+.profile-menu-item:hover {
+  background: #f4f8f7;
+}
+
+.logout-item {
+  color: #b44b4b;
+}
+
+.logout-item:hover {
+  background: #fff2f2;
 }
