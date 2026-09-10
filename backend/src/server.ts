@@ -6,7 +6,7 @@ import patientRoutes from "./routes/patientRoutes";
 import familyMemberRoutes from "./routes/familyMemberRoutes";
 import memoryRoutes from "./routes/memoryRoutes";
 import reminderRoutes from "./routes/reminderRoutes";
-import gameSessionRoutes from "./routes/gamesessionRoutes";
+import gameSessionRoutes from "./routes/gameSessionRoutes";
 import recommendationRoutes from "./routes/recommendationRoutes";
 import authRoutes from "./routes/authRoutes";
 dotenv.config();
